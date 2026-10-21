@@ -1,0 +1,502 @@
+/* Badane Ziba · Persian editorial typography and anime waxing film */
+@font-face {
+  font-family: Estedad;
+  src: url('assets/fonts/Estedad-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Estedad;
+  src: url('assets/fonts/Estedad-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+:root {
+  --display-fa: Estedad, Vazirmatn, sans-serif;
+  --display-en: 'Bebas Neue', Impact, sans-serif;
+  --detail-en: 'Space Grotesk', Arial, sans-serif;
+}
+h1, h2, h3, .brand strong, .master-name, .gallery-caption strong {
+  font-family: var(--display-fa);
+  font-synthesis: none;
+}
+h1, h2 { font-weight: 900; }
+h3, .brand strong, .master-name, .gallery-caption strong { font-weight: 700; }
+h2 { letter-spacing: -1.4px; line-height: 1.8; }
+:lang(en), .brand small, .hero-index, .film-button small, .gallery-caption small, .service-number {
+  font-family: var(--detail-en);
+  font-weight: 500;
+}
+.brand strong { font-size: 25px; letter-spacing: -1.2px; }
+.brand small { font-size: 7px; letter-spacing: 1.8px; }
+.desktop-nav { gap: 25px; }
+.hero, .hero-inner { min-height: 780px; }
+.hero { background: #10100f; }
+.hero-backdrop {
+  inset: 0 auto 0 0;
+  width: 64%;
+  opacity: 1;
+  filter: none;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 73%, transparent);
+}
+.hero-backdrop video { object-fit: cover; object-position: center; }
+.hero-glow { display: none; }
+.hero-content { width: 53%; padding: 40px 0 92px; }
+.hero-kicker {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #aba294;
+  text-align: right;
+  margin-top: 21px;
+}
+.hero h1 {
+  font-size: clamp(60px, 6.2vw, 88px);
+  font-weight: 900;
+  line-height: 1.65;
+  letter-spacing: -2.8px;
+  margin: 8px 0 20px;
+}
+.hero h1 > .hero-headline-white { color: var(--cream); }
+.hero-description { font-size: 14px; }
+.hero-visual { width: 57%; pointer-events: none; }
+.hero-visual:after {
+  background: linear-gradient(0deg, #10100f, transparent 20%, transparent 92%, #10100f);
+}
+.hero-visual button { pointer-events: auto; }
+.visual-word {
+  display: block;
+  top: 46px;
+  left: 56px;
+  right: 0;
+  color: var(--cream);
+  z-index: 3;
+  text-align: left;
+  letter-spacing: 0;
+}
+.visual-word > span { font: 500 9px var(--detail-en); letter-spacing: 4px; }
+.visual-word > strong {
+  display: block;
+  font: 400 clamp(58px, 6.8vw, 98px)/1 var(--display-en);
+  letter-spacing: -1px;
+  margin: 11px 0 5px;
+}
+.latin-dash { color: var(--red); }
+.visual-word > small { font: 500 7px var(--detail-en); letter-spacing: 2.5px; color: #8f8375; }
+.art-caption {
+  position: absolute;
+  left: 58px;
+  bottom: 182px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: #b0a18b;
+}
+.portrait-caption { left: 54px; bottom: 104px; gap: 11px; padding: 12px 15px; background: #15130fbd; }
+.portrait-caption img { width: 43px; height: 43px; border-radius: 50%; object-fit: cover; filter: grayscale(1); border: 1px solid #c9ad6a44; }
+.portrait-caption strong { font-family: var(--display-fa); font-size: 11px; font-weight: 700; }
+.portrait-caption small { font-size: 8px; }
+.mini-star { margin-right: 15px; font-size: 30px; }
+.film-button { left: 56px; bottom: 39px; }
+.film-button small { font-size: 7px; letter-spacing: 1.7px; }
+.motion-toggle { right: 75px; bottom: 47px; }
+.hero-index { bottom: 16px; font-size: 7px; letter-spacing: 2px; }
+.scroll-cue { bottom: 15px; }
+.statement-strip { padding: 17px 0; }
+.statement-strip span { font: 700 21px var(--display-fa); }
+.statement-strip .strip-outline { font: 400 37px/1 var(--display-en); letter-spacing: 1.8px; }
+.gallery-caption small { letter-spacing: 2px; }
+.master-copy h2 { font-size: 33px; }
+.brand-belief { font-family: var(--display-fa); font-weight: 700; font-size: 17px; line-height: 2.1; }
+.journey-grid h3 { font-size: 18px; }
+
+/* Direct contact: one clear destination for every appointment CTA. */
+.contact { padding: 92px 0; background: #1c1b17; border-top: 1px solid #39352c; overflow: hidden; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; }
+.contact-copy h2 { font-size: clamp(37px, 4.2vw, 60px); line-height: 1.8; margin: 21px 0 16px; letter-spacing: -2px; }
+.contact-copy .section-description { font-size: 13px; }
+.contact-latin { display: block; color: transparent; -webkit-text-stroke: 1px #81705b; font: 400 91px/1 var(--display-en); letter-spacing: 1px; margin-top: 34px; }
+.contact-latin > span { color: var(--red); -webkit-text-stroke: 0; }
+.contact-panel { background: var(--cream); color: var(--ink); padding: 27px 31px 23px; border-top: 3px solid var(--red); color-scheme: light; }
+.contact-panel-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 11px; color: #796f60; padding-bottom: 22px; border-bottom: 1px solid #d0c7b8; }
+.contact-panel-top > :lang(en) { font-size: 9px; letter-spacing: 1px; }
+.contact-method { display: flex; align-items: center; gap: 17px; padding: 27px 0; border-bottom: 1px solid #d0c7b8; }
+.contact-method-icon { width: 45px; height: 45px; display: grid; place-items: center; flex-shrink: 0; background: #e3ded3; transition: background .25s, color .25s; border-radius: 50%; }
+.contact-method-icon > .icon { width: 22px; height: 22px; }
+.contact-method-copy { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.contact-method-copy strong { font: 700 18px var(--display-fa); }
+.contact-number { font: 500 27px/1.5 var(--detail-en); letter-spacing: -.5px; text-align: right; white-space: nowrap; }
+.contact-method-copy small { font-size: 9px; color: #857866; }
+.contact-arrow { margin-right: auto; width: 23px; height: 23px; transition: transform .25s; }
+.contact-method:hover .contact-arrow { transform: translate(-4px, 4px); }
+.contact-method:hover .contact-method-icon { background: var(--red); color: var(--cream); }
+.contact-whatsapp .contact-method-icon { background: #dce8d7; color: #2c6b3c; }
+.contact-whatsapp:hover .contact-method-icon { background: #2c6b3c; color: white; }
+.contact-whatsapp-label { font-size: 12px; color: #554c3e; }
+.contact-note { display: flex; align-items: center; gap: 8px; font-size: 9px; color: #8e806b; margin-top: 21px; }
+.section-light { color-scheme: light; }
+
+@media (min-width: 1600px) {
+  .hero, .hero-inner { min-height: 840px; }
+  .hero h1 { font-size: 97px; }
+  .visual-word > strong { font-size: 108px; }
+  .visual-word { left: 76px; }
+}
+@media (max-width: 1150px) {
+  .hero, .hero-inner { min-height: 725px; }
+  .hero h1 { font-size: 73px; }
+  .hero-content { width: 55%; }
+  .visual-word { left: 38px; top: 38px; }
+  .visual-word > strong { font-size: 75px; }
+  .visual-word > small { font-size: 6px; letter-spacing: 1.9px; }
+  .portrait-caption { left: 36px; }
+  .art-caption { left: 40px; font-size: 6px; letter-spacing: 1px; }
+  .film-button { left: 38px; }
+  .contact-grid { gap: 65px; }
+  .contact-panel { padding: 24px; }
+  .contact-method { gap: 13px; }
+  .contact-number { font-size: 25px; }
+}
+@media (max-width: 900px) {
+  .brand strong { font-size: 22px; }
+  .brand small { font-size: 6px; letter-spacing: 1.2px; }
+  .desktop-nav { gap: 15px; }
+  .hero, .hero-inner { min-height: 670px; }
+  .hero h1 { font-size: 60px; letter-spacing: -2.5px; }
+  .hero-kicker { font-size: 8px; letter-spacing: 2px; }
+  .hero-description { font-size: 12px; }
+  .hero-visual { width: 58%; }
+  .hero-backdrop { width: 68%; }
+  .visual-word { left: 29px; }
+  .visual-word > strong { font-size: 59px; }
+  .visual-word > span { font-size: 8px; letter-spacing: 3px; }
+  .visual-word > small { letter-spacing: 1.3px; font-size: 5px; }
+  .portrait-caption { left: 28px; bottom: 105px; padding: 10px; gap: 8px; }
+  .portrait-caption img { width: 34px; height: 34px; }
+  .portrait-caption strong { font-size: 9px; }
+  .portrait-caption small { font-size: 6px; }
+  .portrait-caption .mini-star { font-size: 22px; margin-right: 6px; }
+  .film-button { left: 30px; font-size: 10px; }
+  .film-button small { font-size: 6px; letter-spacing: 1px; }
+  .art-caption { bottom: 174px; left: 31px; font-size: 5px; letter-spacing: .9px; }
+  .motion-toggle { right: 40px; bottom: 43px; }
+  .master-copy h2 { font-size: 25px; }
+  .contact { padding: 68px 0; }
+  .contact-grid { gap: 38px; }
+  .contact-copy h2 { font-size: 37px; }
+  .contact-copy .section-description { font-size: 11px; }
+  .contact-latin { font-size: 75px; }
+  .contact-panel { padding: 22px 20px; }
+  .contact-method { gap: 11px; padding: 24px 0; }
+  .contact-method-icon { width: 35px; height: 35px; }
+  .contact-method-icon .icon { width: 18px; height: 18px; }
+  .contact-method-copy strong { font-size: 15px; }
+  .contact-method-copy small { font-size: 8px; }
+  .contact-number { font-size: 22px; }
+  .contact-whatsapp-label { font-size: 10px; }
+  .contact-arrow { width: 17px; height: 17px; }
+  .contact-note { font-size: 8px; }
+  .contact-panel-top { font-size: 10px; }
+  .contact-panel-top > :lang(en) { font-size: 7px; }
+}
+@media (max-width: 680px) {
+  .hero, .hero-inner { min-height: 1050px; }
+  .hero-content { width: 100%; padding: 35px 0 0; }
+  .hero h1 { font-size: clamp(46px, 13.9vw, 72px); line-height: 1.75; letter-spacing: -2.2px; margin: 9px 0 15px; }
+  .hero-kicker { font-size: 8px; letter-spacing: 2px; margin-top: 17px; }
+  .hero-description { font-size: 12px; }
+  .hero-actions { margin-top: 23px; }
+  .hero-assurance { margin-top: 19px; }
+  .hero-backdrop { inset: auto 0 0; width: 100%; height: 550px; mask-image: linear-gradient(0deg, transparent, #000 12%, #000 83%, transparent); }
+  .hero-backdrop video { object-fit: cover; object-position: center; }
+  .hero-visual { width: calc(100% + 40px); height: 550px; left: -20px; top: auto; bottom: 0; }
+  .visual-word { top: 17px; left: 22px; writing-mode: horizontal-tb; right: 0; }
+  .visual-word > span { font-size: 7px; letter-spacing: 3px; }
+  .visual-word > strong { font-size: 54px; margin-top: 6px; }
+  .visual-word > small { font-size: 5px; letter-spacing: 1.5px; }
+  .hero-visual:after { background: linear-gradient(0deg, #10100f, transparent 29%, transparent 85%, #10100f); }
+  .art-caption { left: 23px; bottom: 174px; font-size: 5px; letter-spacing: .8px; }
+  .portrait-caption { left: 22px; bottom: 105px; padding: 10px 12px; gap: 10px; }
+  .portrait-caption strong { font-size: 10px; }
+  .portrait-caption small { font-size: 7px; }
+  .portrait-caption img { width: 35px; height: 35px; }
+  .portrait-caption .mini-star { font-size: 24px; margin-right: 12px; }
+  .film-button { bottom: 48px; left: 23px; font-size: 10px; }
+  .motion-toggle { right: 26px; bottom: 49px; }
+  .hero-index { font-size: 5px; letter-spacing: 1.2px; bottom: 17px; }
+  .scroll-cue { bottom: 15px; }
+  .statement-strip span { font-size: 17px; }
+  .statement-strip .strip-outline { font-size: 30px; }
+  h2 { line-height: 1.9; letter-spacing: -1px; }
+  .section-intro h2, .master-copy h2 { font-size: 28px; }
+  .brand-belief { font-size: 15px; }
+  .contact { padding: 55px 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+  .contact-copy h2 { font-size: clamp(36px, 10vw, 46px); line-height: 1.85; margin: 16px 0; }
+  .contact-copy .section-description { font-size: 12px; }
+  .contact-latin { font-size: 74px; margin-top: 23px; }
+  .contact-panel { padding: 24px 23px; }
+  .contact-method { padding: 25px 0; gap: 14px; }
+  .contact-method-icon { width: 40px; height: 40px; }
+  .contact-method-copy strong { font-size: 17px; }
+  .contact-number { font-size: 25px; }
+  .contact-method-copy small { font-size: 8px; }
+  .contact-whatsapp-label { font-size: 11px; }
+  .contact-note { font-size: 8px; }
+}
+@media (max-width: 370px) {
+  .hero, .hero-inner { min-height: 1020px; }
+  .hero h1 { font-size: 44px; }
+  .hero-visual { left: -15px; width: calc(100% + 30px); }
+  .visual-word > strong { font-size: 48px; }
+  .brand strong { font-size: 20px; }
+  .brand small { font-size: 5px; }
+  .contact-panel { padding: 22px 17px; }
+  .contact-method { gap: 10px; }
+  .contact-method-icon { width: 34px; height: 34px; }
+  .contact-method-copy strong { font-size: 15px; }
+  .contact-number { font-size: 23px; }
+  .contact-whatsapp-label { font-size: 10px; }
+}
+
+/* Persian reading layout: keep connected script intact, reflow prose naturally. */
+body { text-align: start; }
+h1, h2, h3, .brand strong, .master-name, .brand-belief, .gallery-caption strong {
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: start;
+  text-wrap: balance;
+}
+.hero h1 {
+  font-size: clamp(38px, 4.25vw, 61px);
+  line-height: 1.9;
+  letter-spacing: normal;
+  margin-block: 10px 21px;
+}
+.hero h1 > span { white-space: normal; }
+.hero-content { width: 49%; }
+.hero-description, .section-description, .service-row p, .journey-grid p, .faq-list details > p {
+  text-align: justify;
+  text-align-last: start;
+  text-justify: inter-word;
+  line-height: 2.15;
+  letter-spacing: normal;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+.hero-description { max-width: 43ch; font-size: 15px; }
+.section-description, .master-copy .section-description { font-size: 14px; }
+.service-row p, .journey-grid p, .faq-list details > p { font-size: 13px; }
+.service-row h3 { font-size: 21px; }
+.service-row > div { min-width: 0; }
+.section-intro h2, .section-heading h2, .master-copy h2 { font-size: 31px; line-height: 1.9; }
+.brand-belief { font-size: 16px; line-height: 2.1; }
+.faq-list summary { line-height: 2; font-size: 14px; }
+.visual-word > strong { font-size: 47px; }
+.visual-word { top: 27px; }
+.visual-word > small { color: #b7ab97; }
+.art-caption { font-family: var(--font); font-size: 10px; letter-spacing: normal; }
+.hero-backdrop { width: 61%; mask-image: linear-gradient(90deg,transparent,#000 6%,#000 77%,transparent); }
+.hero-backdrop video { object-position: center; }
+.contact-copy h2 { font-size: 47px; line-height: 1.9; letter-spacing: normal; }
+.contact-copy .section-description { font-size: 14px; }
+.gallery-filters button { min-height: 42px; }
+.hero-actions .button { font-size: 13px; }
+.hero-actions .text-link { font-size: 12px; }
+.contact-method-copy strong { letter-spacing: normal; }
+.contact-note { font-size: 10px; line-height: 2; }
+.contact-method-copy small { font-size: 10px; }
+.contact-number { unicode-bidi: isolate; }
+@media (min-width: 1600px) {
+  .hero h1 { font-size: 67px; }
+}
+@media (max-width: 1150px) {
+  .hero h1 { font-size: 48px; }
+  .hero-description { font-size: 14px; }
+  .hero-actions { gap: 18px; }
+  .hero-actions .button { padding-inline: 16px; gap: 14px; font-size: 12px; }
+  .section-intro h2, .section-heading h2, .master-copy h2 { font-size: 28px; }
+  .contact-copy h2 { font-size: 40px; }
+}
+@media (max-width: 900px) {
+  .hero h1 { font-size: 39px; }
+  .hero-content { width: 51%; }
+  .hero-description { font-size: 13px; }
+  .hero-actions { gap: 13px; }
+  .hero-actions .button { font-size: 11px; padding-inline: 12px; }
+  .hero-actions .text-link { font-size: 10px; }
+  .section-intro h2, .section-heading h2, .master-copy h2 { font-size: 26px; }
+  .visual-word > strong { font-size: 39px; }
+  .art-caption { font-size: 8px; }
+  .contact-copy h2 { font-size: 33px; }
+  .service-row h3 { font-size: 18px; }
+}
+@media (max-width: 680px) {
+  .hero, .hero-inner { min-height: 1100px; }
+  .hero-content { width: 100%; }
+  .hero h1 { font-size: clamp(31px, 8.9vw, 49px); line-height: 1.95; }
+  .hero-description { max-width: none; font-size: 14px; }
+  .hero-actions .button { font-size: 12px; padding-inline: 16px; }
+  .hero-actions .text-link { font-size: 11px; }
+  .hero-backdrop { width: 100%; height: 550px; mask-image: linear-gradient(0deg,transparent,#000 10%,#000 90%,transparent); }
+  .visual-word { top: 15px; }
+  .visual-word > strong { font-size: 32px; }
+  .visual-word > small { display: none; }
+  .section-intro h2, .section-heading h2, .master-copy h2 { font-size: 26px; line-height: 1.9; }
+  .section-description, .services .section-description, .master-copy .section-description, .faq .section-description { font-size: 14px; }
+  .faq-list details > p, .service-row p, .journey-grid p { font-size: 13px; }
+  .faq-list summary { font-size: 13px; }
+  .contact-copy h2 { font-size: 36px; }
+  .contact-copy .section-description { font-size: 14px; }
+  .service-row { gap: 12px; }
+  .service-row h3 { font-size: 18px; }
+  .service-tag, .service-note { font-size: 10px; }
+  .intro-star { display: none; }
+  .art-caption { font-size: 8px; }
+  .contact-method-copy small { font-size: 9px; }
+  .contact-note { font-size: 9px; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 30px; }
+  .hero-actions { gap: 10px; }
+  .hero-actions .button { font-size: 11px; padding-inline: 12px; gap: 10px; }
+  .hero-actions .text-link { font-size: 10px; }
+  .hero-description, .section-description, .service-row p, .journey-grid p, .faq-list details > p { text-align: start; }
+  .contact-note { align-items: flex-start; }
+  .contact-note .status-dot { margin-top: 9px; flex-shrink: 0; }
+}
+
+@media (max-width: 680px) {
+  .hero, .hero-inner { min-height: 1050px; }
+}
+
+/* Business information: readable Persian prose and compact supporting icons. */
+.master-copy .section-description + .section-description { margin-top: 14px; }
+.care-promises { padding: 0 0 80px; }
+.care-heading { border-top: 1px solid #35332f; padding-top: 42px; margin-bottom: 30px; }
+.care-heading h2 { font-size: 28px; line-height: 1.9; margin-top: 10px; }
+.care-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+.care-grid article { border-inline-start: 1px solid #35332f; padding-inline-start: 24px; }
+.care-grid article > .icon { width: 32px; height: 32px; color: var(--red, #ee292e); margin-bottom: 16px; }
+.care-grid h3 { font-size: 16px; line-height: 2; margin-bottom: 9px; }
+.care-grid p { color: #aaa8a2; font-size: 13px; line-height: 2.1; }
+.visit-details { margin-top: 30px; border-top: 1px solid #383630; padding-top: 25px; }
+.visit-row { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 23px; }
+.visit-row > .icon { color: var(--red, #ee292e); flex: 0 0 24px; width: 24px; height: 24px; margin-top: 7px; }
+.visit-row h3 { font-size: 15px; line-height: 2; margin-bottom: 7px; }
+.visit-row address, .visit-row p { font-size: 14px; font-style: normal; line-height: 2.1; color: #d0cec7; }
+.visit-row small { display: block; font-size: 12px; line-height: 2; color: #a9a79f; margin-top: 5px; }
+.map-link { display: inline-block; color: #ff6a60; text-underline-offset: 6px; text-decoration: underline; font-size: 12px; padding-block: 10px; }
+.contact-latin { margin-top: 20px; font-size: 74px; }
+.contact-grid { align-items: start; }
+.contact-panel { margin-top: 16px; }
+.faq-list summary { gap: 20px; }
+.faq-list details > p { max-width: 65ch; }
+.faq-plus { flex-shrink: 0; }
+@media (max-width: 900px) {
+  .care-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+  .care-promises { padding-bottom: 55px; }
+  .visit-row address, .visit-row p { font-size: 13px; }
+}
+@media (max-width: 680px) {
+  .care-grid { gap: 24px 18px; }
+  .care-grid article { padding-inline-start: 12px; }
+  .care-grid h3 { font-size: 14px; }
+  .care-grid p { font-size: 12px; }
+  .care-heading h2 { font-size: 25px; }
+  .contact-latin { font-size: 58px; }
+  .contact-panel { margin-top: 0; }
+}
+
+/* Business information: readable Persian prose and compact supporting icons. */
+.master-copy .section-description + .section-description { margin-top: 14px; }
+.care-promises { padding: 0 0 80px; }
+.care-heading { border-top: 1px solid #35332f; padding-top: 42px; margin-bottom: 30px; }
+.care-heading h2 { font-size: 28px; line-height: 1.9; margin-top: 10px; }
+.care-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; }
+.care-grid article { border-inline-start: 1px solid #35332f; padding-inline-start: 24px; }
+.care-grid article > .icon { width: 32px; height: 32px; color: var(--red, #ee292e); margin-bottom: 16px; }
+.care-grid h3 { font-size: 16px; line-height: 2; margin-bottom: 9px; }
+.care-grid p { color: #aaa8a2; font-size: 13px; line-height: 2.1; }
+.visit-details { margin-top: 30px; border-top: 1px solid #383630; padding-top: 25px; }
+.visit-row { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 23px; }
+.visit-row > .icon { color: var(--red, #ee292e); flex: 0 0 24px; width: 24px; height: 24px; margin-top: 7px; }
+.visit-row h3 { font-size: 15px; line-height: 2; margin-bottom: 7px; }
+.visit-row address, .visit-row p { font-size: 14px; font-style: normal; line-height: 2.1; color: #d0cec7; }
+.visit-row small { display: block; font-size: 12px; line-height: 2; color: #a9a79f; margin-top: 5px; }
+.map-link { display: inline-block; color: #ff6a60; text-underline-offset: 6px; text-decoration: underline; font-size: 12px; padding-block: 10px; }
+.contact-latin { margin-top: 20px; font-size: 74px; }
+.contact-grid { align-items: start; }
+.contact-panel { margin-top: 16px; }
+.faq-list summary { gap: 20px; }
+.faq-list details > p { max-width: 65ch; }
+.faq-plus { flex-shrink: 0; }
+@media (max-width: 900px) {
+  .care-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+  .care-promises { padding-bottom: 55px; }
+  .visit-row address, .visit-row p { font-size: 13px; }
+}
+@media (max-width: 680px) {
+  .care-grid { gap: 24px 18px; }
+  .care-grid article { padding-inline-start: 12px; }
+  .care-grid h3 { font-size: 14px; }
+  .care-grid p { font-size: 12px; }
+  .care-heading h2 { font-size: 25px; }
+  .contact-latin { font-size: 58px; }
+  .contact-panel { margin-top: 0; }
+}
+
+/* Seamless ticker: equal copies keep the loop continuous in either script. */
+.statement-strip { position: relative; overflow: hidden; direction: ltr; }
+.statement-strip > .strip-track {
+  display: flex;
+  width: max-content;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0;
+  direction: ltr;
+  animation: strip-scroll 34s linear infinite;
+}
+.strip-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  direction: rtl;
+  gap: clamp(30px, 5vw, 80px);
+  min-width: 100vw;
+  padding-inline: clamp(20px, 3vw, 48px);
+  white-space: nowrap;
+}
+.strip-group > span, .strip-group > .icon { flex-shrink: 0; }
+.strip-group > span { line-height: 1.9; }
+@media (hover: hover) {
+  .statement-strip:hover > .strip-track { animation-play-state: paused; }
+}
+@keyframes strip-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .statement-strip > .strip-track { animation: none; width: 100%; }
+  .strip-group { min-width: 0; width: 100%; flex-wrap: wrap; gap: 16px 24px; padding-inline: 24px; }
+  .strip-group[aria-hidden="true"] { display: none; }
+  .strip-group > span { white-space: normal; }
+}

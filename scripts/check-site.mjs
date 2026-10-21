@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import { readFile, access } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+const root = fileURLToPath(new URL('../dist/', import.meta.url));
+const read = name => readFile(path.join(root, name), 'utf8');
+const html = await read('index.html');
+const domain = 'https://badaneziba.com/';
+assert.match(html, /<html lang="fa" dir="rtl">/);
+assert.equal((html.match(/<h1\b/g) || []).length, 1, 'Exactly one H1');
+assert.match(html, /<title>[^<]*تهران[^<]*بدن زیبا<\/title>/);
+assert.ok(html.includes(`<link rel="canonical" href="${domain}">`));
+assert.ok(html.includes(`<meta property="og:url" content="${domain}">`));
+assert.match(html, /<meta name="description" content="[^"]{60,200}">/);
+assert.equal((html.match(/<details\b/g) || []).length, 7);
+assert.doesNotMatch(html, /<form\b/);
+const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+assert.equal(ids.length, new Set(ids).size, 'Unique HTML IDs');
+for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(id), `Missing anchor: ${id}`);
+const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+const salon = schema['@graph'].find(item => item['@type'] === 'BeautySalon');
+assert.equal(salon.url, domain);
+assert.equal(salon.telephone, '+989127200944');
+assert.equal(salon.address.addressLocality, 'تهران');
+assert.equal(salon.openingHoursSpecification[0].dayOfWeek.length, 7);
+assert.equal(salon.openingHoursSpecification[0].opens, '11:00');
+assert.equal(salon.openingHoursSpecification[0].closes, '20:00');
+assert.match(html, /href="tel:\+989127200944"/);
+assert.match(html, /href="https:\/\/wa.me\/989127200944"/);
+assert.ok((await read('robots.txt')).includes(`Sitemap: ${domain}sitemap.xml`));
+assert.ok((await read('sitemap.xml')).includes(`<loc>${domain}</loc>`));
+assert.match(await read('404.html'), /name="robots" content="noindex"/);
+const assets = new Set();
+for (const source of [html, await read('styles.css'), await read('art-direction.css')]) {
+  for (const [, asset] of source.matchAll(/(?:src|href|poster|data-src)="(assets\/[^"?#]+)"/g)) assets.add(asset);
+  for (const [, asset] of source.matchAll(/url\(['"]?(assets\/[^)'"?#]+)['"]?\)/g)) assets.add(asset);
+}
+for (const asset of assets) await access(path.join(root, asset));
+console.log(`PASS: SEO, business data, contact links, anchors and ${assets.size} local assets`);

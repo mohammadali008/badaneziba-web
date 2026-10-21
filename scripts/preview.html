@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Local responsive preview</title>
+<style>body{margin:0;background:#292925;color:#eee;font:13px system-ui}header{padding:14px 22px;box-sizing:border-box;min-width:320px;position:relative}a{color:#ff735e;margin-right:16px}output{display:block;margin-top:9px;color:#bdb8aa;font-size:11px;max-width:95vw}iframe{display:block;border:0;background:#10100f}h1{font-size:14px;margin:0 0 8px}</style></head><body>
+<header><h1>BADANE ZIBA · Responsive preview</h1><nav><a href="?width=1440">Desktop</a><a href="?width=768">Tablet</a><a href="?width=390">Mobile</a><a href="?width=320">Small mobile</a></nav><output id="report">Loading…</output></header>
+<iframe id="site" title="Salon's landing page preview" src="../index.html"></iframe>
+<script>
+const viewportWidth = Math.max(320, Math.min(1920, Number(new URLSearchParams(location.search).get('width')) || 1440));
+const frame = document.getElementById('site');
+frame.style.width = viewportWidth + 'px';
+frame.style.height = '900px';
+frame.addEventListener('load', async () => {
+  const doc = frame.contentDocument;
+  await doc.fonts.ready;
+  const style = doc.createElement('style');
+  style.textContent = '.reveal{opacity:1!important;transform:none!important}.hero-portrait{animation:none!important}html{scroll-behavior:auto!important}';
+  doc.head.append(style);
+  frame.style.height = doc.documentElement.scrollHeight + 'px';
+  const imageErrors = [...doc.images].filter(i => i.getAttribute('src') && i.complete && !i.naturalWidth).length;
+  document.getElementById('report').textContent = JSON.stringify({viewport:viewportWidth,pageWidth:doc.documentElement.scrollWidth,horizontalOverflow:doc.documentElement.scrollWidth > viewportWidth,fonts:{body:doc.fonts.check('16px Vazirmatn'),persian:doc.fonts.check('900 16px Estedad'),latin:doc.fonts.check('16px "Bebas Neue"'),detail:doc.fonts.check('500 16px "Space Grotesk"')},imageErrors,sections:doc.querySelectorAll('main section').length});
+});
+</script></body></html>

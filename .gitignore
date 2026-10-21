@@ -1,0 +1,12 @@
+scripts/.render-deps/
+__pycache__/
+*.pyc
+dist/
+.wrangler/
+node_modules/
+preview/
+img/
+.env
+.env.*
+!.env.example
+*.log
