@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-site.mjs",
-    "check": "node --check app.js && node --check site-config.js && node scripts/check-site.mjs"
+    "check": "node --check app.js && node --check site-config.js && node --check wax-game.js && node scripts/check-site.mjs && node scripts/check-game.mjs"
   },
   "engines": { "node": ">=20" }
 }

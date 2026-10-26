@@ -16,7 +16,7 @@ npm run build
 
 ۱. مخزن پروژه: https://github.com/mohammadali008/badaneziba-web — شاخه production را `main` انتخاب کنید. فایل‌های `package.json` و `wrangler.jsonc` باید در ریشه مخزن باشند.
 
-۲. در Cloudflare، بخش Workers & Pages، یک Worker با اتصال به مخزن GitHub بسازید. نام Worker را `badaneziba` انتخاب کنید تا با فایل تنظیمات یکسان باشد.
+۲. در Cloudflare، بخش Workers & Pages، یک Worker با اتصال به مخزن GitHub بسازید. نام Worker را `badaneziba-web` انتخاب کنید تا با فایل تنظیمات یکسان باشد.
 
 ۳. ریشه پروژه را `/`، فرمان build را `npm run build` و فرمان deploy را `npx wrangler deploy` بگذارید. در صورت درخواست نصب Wrangler، همان ابزار رسمی Cloudflare استفاده شود. اتصال GitHub در پنل، انتشار خودکار commitهای شاخه production را مدیریت می‌کند؛ نیازی به نوشتن توکن در سورس نیست.
 

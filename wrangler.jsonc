@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "badaneziba",
+  "name": "badaneziba-web",
   "compatibility_date": "2026-10-21",
   "assets": {
     "directory": "./dist",

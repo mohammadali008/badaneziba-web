@@ -50,3 +50,7 @@
 - [سیاست‌های تکرار کلمه و صفحات واسطه](https://developers.google.com/search/docs/essentials/spam-policies)
 - [درخواست بازخزش](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)
 - [Always Use HTTPS در Cloudflare](https://developers.cloudflare.com/ssl/edge-certificates/additional-options/always-use-https/)
+
+## راهنمای بازی و تخفیف
+
+بخش چالش وکس بعد از خدمات قرار دارد. راهنمای قابل مشاهده، عبارت‌های مرتبط «بازی وکس»، «تخفیف سالن بدن زیبا» و «خدمات وکس و اپیلاسیون آقایان» را در توضیح واقعی بازی به کار می‌برد. تخفیف هر برد از ۱۰۰ تا ۵۰۰ تومان، دفعات بازی نامحدود، پذیرش یک اسکرین‌شات و عدم جمع امتیازها صریحاً بیان شده‌اند. بازی به‌تنهایی تضمین رتبه یا بهبود رتبه نیست و امتیاز بازی به‌عنوان review یا rating در داده ساختاریافته درج نشده است.

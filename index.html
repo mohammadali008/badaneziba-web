@@ -22,8 +22,10 @@
   <link rel="preload" href="assets/fonts/Estedad-Black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="art-direction.css">
+  <link rel="stylesheet" href="wax-game.css">
   <script src="site-config.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="wax-game.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -197,6 +199,48 @@
           <a class="service-row" href="#contact"><span class="service-number" dir="ltr">02</span><div><h3>وکس دست و پا</h3><p>اپیلاسیون دست‌ها و پاها به‌صورت کامل یا ناحیه‌ای، با هماهنگی پیش از مراجعه.</p><span class="service-tag">دست‌ها و پاها، کامل یا ناحیه‌ای</span></div><span class="row-arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diagonal"/></svg></span></a>
           <a class="service-row" href="#contact"><span class="service-number" dir="ltr">03</span><div><h3>اپیلاسیون کامل بدن</h3><p>هماهنگی خدمات وکس چند ناحیه از بدن در یک جلسه، بر اساس نیاز و انتخاب شما.</p><span class="service-tag">هماهنگی نواحی و مدت جلسه پیش از مراجعه</span></div><span class="row-arrow"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diagonal"/></svg></span></a>
           <p class="service-note">جزئیات خدمات و هزینه، پس از مشاوره و پیش از نهایی‌شدن نوبت اعلام می‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wax-game" id="wax-game" aria-labelledby="wax-game-title">
+      <div class="container wax-game-layout">
+        <div class="wax-game-copy">
+          <p class="eyebrow"><span class="red-line"></span> یک چالش کوتاه، یک حس خوب</p>
+          <h2 id="wax-game-title">دستت چقدر سریعه؟<br><span>چالش وکس بدن زیبا</span></h2>
+          <p class="wax-game-lead">۱۲ نوار روشن، ۲۰ ثانیه فرصت. نوار طلایی را پیدا کن، بکش و سراغ بعدی برو. چالش را کامل کن و امتیاز تخفیف بگیر!</p>
+          <div class="wax-labels"><span>رایگان و بدون ثبت‌نام</span><span>بازی نامحدود</span><span>۱۰۰ تا ۵۰۰ امتیاز</span></div>
+          <div class="wax-game-help" id="wax-game-help">
+            <h3>راهنمای بازی وکس و تخفیف سالن بدن زیبا</h3>
+            <ol>
+              <li>«شروع چالش» را بزن. از میان نوارها، فقط نوار طلاییِ روشن را با انگشت یا موس بکش؛ لمس یا کلیک هم کار می‌کند.</li>
+              <li>هر بار جای نوار روشن عوض می‌شود. برای برد، هر ۱۲ نوار را در ۲۰ ثانیه پاک کن. با صفحه‌کلید هم می‌توانی روی نوار روشن Enter یا Space بزنی.</li>
+              <li>بعد از موفقیت، به‌صورت تصادفی بین ۱۰۰ تا ۵۰۰ امتیاز دریافت می‌کنی؛ هر امتیاز معادل یک تومان تخفیف خدمات وکس و اپیلاسیون آقایان در سالن بدن زیبا است.</li>
+            </ol>
+            <p class="wax-game-terms">بازی برای همه آزاد است و می‌توانی هر چند بار که خواستی بازی کنی. برای استفاده از تخفیف، اسکرین‌شات نتیجه را به سالن نشان بده؛ فقط یک نتیجه پذیرفته می‌شود و امتیاز بازی‌ها با هم جمع نمی‌شوند.</p>
+            <small class="wax-game-note">این بازی صرفاً برای سرگرمی است و روش واقعی انجام وکس یا اپیلاسیون را آموزش نمی‌دهد.</small>
+          </div>
+        </div>
+        <div class="wax-game-console">
+          <div class="wax-panel">
+            <div class="wax-panel-top"><div><small>نوارهای پاک‌شده</small><strong class="wax-count" dir="ltr">۰ / ۱۲</strong></div><div class="wax-time"><small>ثانیه باقی‌مانده</small><strong class="wax-seconds">۲۰</strong></div></div>
+            <div class="wax-controls" hidden><button class="button button-red wax-start" type="button" aria-describedby="wax-game-help">شروع چالش ↗</button><button class="wax-pause" type="button" hidden>مکث</button></div>
+            <div class="wax-board" role="group" aria-label="صفحه بازی؛ نوار طلایی را بکش یا انتخاب کن">
+              <svg class="wax-torso" viewBox="0 0 320 440" aria-hidden="true" focusable="false"><defs><linearGradient id="wax-skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#bc8758"/><stop offset=".48" stop-color="#d6a16f"/><stop offset="1" stop-color="#855334"/></linearGradient></defs><path d="M125 4h70l10 33 61 19 40 58-38 32-29-33-9 115 17 188H73l17-188-9-115-29 33-38-32 40-58 61-19Z" fill="url(#wax-skin)" stroke="#e4bb852f" stroke-width="2"/><path d="m115 37 45 24 45-24M160 64v135M85 116q32 28 75 4 43 24 75-4M100 217q60 20 120 0M102 278q58 17 116 0M101 341q59 16 118 0" fill="none" stroke="#72462a66" stroke-width="2"/></svg>
+              <div class="wax-patches"></div>
+              <div class="wax-cover"><span class="wax-cover-mark" lang="en" dir="ltr" aria-hidden="true">20 SEC.</span><strong class="wax-cover-title">آماده‌ای برای چالش؟</strong><p class="wax-cover-copy">نوار طلایی را بگیر. یک حرکت کوتاه و تمیز؛ بعدی!</p></div>
+            </div>
+            <div class="wax-meter" role="progressbar" aria-label="پیشرفت چالش" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span class="wax-meter-fill"></span></div>
+            <div class="wax-panel-bottom"><span>بکش، پاک کن، تکرار کن.</span><span lang="en" dir="ltr">BADANE ZIBA / WAX CHALLENGE</span></div>
+          </div>
+          <p class="wax-unavailable">برای اجرای بازی، جاوااسکریپت مرورگر باید فعال باشد. اطلاعات خدمات و راه‌های تماس همچنان در دسترس‌اند.</p>
+          <p class="wax-status" role="status" aria-live="polite" aria-atomic="true">برای شروع، راهنما را بخوان و دکمه شروع چالش را بزن.</p>
+          <div class="wax-result" tabindex="-1" aria-labelledby="wax-result-title" hidden>
+            <small>سالن بدن زیبا · نتیجه چالش وکس</small><h3 class="wax-reward-title" id="wax-result-title">تمیز و حرفه‌ای! بردی.</h3>
+            <div class="wax-reward-amount"><strong class="wax-reward-number">۰</strong><span>امتیاز</span></div>
+            <p class="wax-reward-equivalent"></p><p>از این نتیجه اسکرین‌شات بگیر و برای دریافت تخفیف به سالن نشان بده. فقط یک نتیجه پذیرفته می‌شود؛ امتیازها قابل جمع‌کردن نیستند.</p>
+            <a href="#contact">هماهنگی نوبت و استفاده از تخفیف ↙</a><time class="wax-reward-date"></time>
+          </div>
         </div>
       </div>
     </section>
