@@ -41,7 +41,8 @@ h2 { letter-spacing: -1.4px; line-height: 1.8; }
 }
 .brand strong { font-size: 25px; letter-spacing: -1.2px; }
 .brand small { font-size: 7px; letter-spacing: 1.8px; }
-.desktop-nav { gap: 25px; }
+.desktop-nav { gap: clamp(12px, 1.7vw, 25px); }
+.nav-game-link { white-space: nowrap; }
 .hero, .hero-inner { min-height: 780px; }
 .hero { background: #10100f; }
 .hero-backdrop {

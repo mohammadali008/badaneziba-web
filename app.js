@@ -146,13 +146,13 @@
     new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; syncMotion(); }, { threshold: 0 }).observe($('.hero'));
     const activeObserver = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      $$('.desktop-nav a').forEach(link => {
+      $$('.desktop-nav a, #mobile-nav a').forEach(link => {
         if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
     }), { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
     activeObserver.observe($('.hero'));
-    $$('#services, #master, #gallery, #faq, #contact').forEach(section => activeObserver.observe(section));
+    $$('#services, #master, #gallery, #wax-game, #faq, #contact').forEach(section => activeObserver.observe(section));
     const hiddenMobileTargets = new Set();
     const mobileBookObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => entry.isIntersecting ? hiddenMobileTargets.add(entry.target) : hiddenMobileTargets.delete(entry.target));
