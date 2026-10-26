@@ -39,20 +39,15 @@
 
   // Ambient video is muted and only runs while visible. Respect data/motion preferences.
   const heroVideo = $('#hero-video');
-  const motionToggle = $('#motion-toggle');
   let motionPaused = reducedMotion.matches || Boolean(navigator.connection?.saveData);
   let heroVisible = true;
   function syncMotion() {
     const paused = motionPaused || !heroVisible || document.hidden || Boolean($('dialog[open]'));
     document.body.classList.toggle('motion-paused', paused);
-    motionToggle.setAttribute('aria-pressed', String(motionPaused));
-    motionToggle.setAttribute('aria-label', motionPaused ? 'پخش حرکت پس‌زمینه' : 'توقف حرکت پس‌زمینه');
-    motionToggle.firstElementChild.textContent = motionPaused ? '▶' : 'Ⅱ';
     if (paused) { heroVideo.pause(); return; }
     if (!heroVideo.getAttribute('src')) heroVideo.src = config.backgroundVideo || heroVideo.dataset.src;
     heroVideo.play().catch(() => { /* A static poster remains visible when autoplay is unavailable. */ });
   }
-  motionToggle.addEventListener('click', () => { motionPaused = !motionPaused; syncMotion(); });
   reducedMotion.addEventListener('change', event => { motionPaused = event.matches; syncMotion(); });
   document.addEventListener('visibilitychange', syncMotion);
 
